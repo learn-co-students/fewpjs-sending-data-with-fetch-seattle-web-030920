@@ -24,13 +24,12 @@ function submitData(name, email) {
     return fetch("http://localhost:3000/users", configObj)
     .then(resp => resp.json())
     .then(json => processResp(json))
-    .catch(error => appendError(error))
+    .catch(error => appendError())
 }
 // append error to DOM 
 
 function appendError(error) {
-    debugger 
-    let e = error 
+   
     let li = document.createElement("li")
     li.textContent = "Unauthorized Access"
 
